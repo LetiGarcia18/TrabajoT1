@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas</title>
+    <style>
+        #portaMascota {
+            width: 900px;
+            height: 400px;
+            background-color: lightpink;
+            display: block;
+        }
+
+        #fotoMascota {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (orientation:portrait) {
+            #portaPaisaje {
+                width: 1200px;
+                height: 1500px;
+                background-color: cyan;
+            }
+        }
+
+        @media screen and (orientation:landscape) {
+            #portaPaisaje {
+                width: 1920px;
+                height: 1200px;
+                background-color: cyan;
+            }
+        }    
+    </style>
+</head>
+<body>
+    <picture id="portaMascota">
+
+        <source media="(orientation: landscape) and (min-width: 1921px)" srcset="./horizontal1jpg.heic" type="image/heic">
+        <source media="(orientation: landscape) and (min-width: 1921px)" srcset="./horizontal1jpg.webp" type="image/webp">
+        <source media="(orientation: landscape) and (min-width: 1921px)" srcset="./horizontal1jpg.jpg" type="image/jpg">
+        <source media="(orientation: landscape) and (min-width: 801px)" srcset="./horizontal2.heic" type="image/heic">
+        <source media="(orientation: landscape) and (min-width: 801px)" srcset="./horizontal2.webp" type="image/webp">
+        <source media="(orientation: landscape) and (min-width: 801px)" srcset="./horizontal2.jpg" type="image/jpg">
+        <source media="(orientation: portrait) and (min-width:1201px)" srcset="./vertical1.heic" type="image/heic">
+        <source media="(orientation: portrait) and (min-width:1201px)" srcset="./vertical1.webp" type="image/webp">
+        <source media="(orientation: portrait) and (min-width:1201px)" srcset="./vertical1.jpg" type="image/jpg">
+        <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical2.heic" type="image/heic">
+        <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical2.webp" type="image/webp">
+        <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical2.jpg" type="image/jpg">
+
+        <img 
+            id="fotoMascota" 
+            alt="Foto de un conejito" 
+            title="Peluchines"           
+            src="vertical2.jpg" />
+</body>
+</html>
