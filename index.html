@@ -8,8 +8,7 @@
     <style>
         body {
             background-color: lightgreen;
-            margin: 15% auto;
-            overflow: hidden;
+            
         }
         #portaMascota {
             width: 900px;
@@ -19,12 +18,17 @@
             align-items: center;
             justify-content: center;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 7% auto;
         }
 
         #fotoMascota {
             width: 100%;
             object-fit: cover;
+        }
+
+        .centrado {
+            margin:10px auto;
+		    display:block;
         }
 
         @media screen and (orientation:portrait) {
@@ -61,6 +65,7 @@
         <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical2.jpg" type="image/jpg">
 
         <img 
+            class="centrado"
             id="fotoMascota" 
             alt="Foto de un conejito" 
             title="Bolitas de algodón con patas ♡"           
