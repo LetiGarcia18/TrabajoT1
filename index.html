@@ -8,67 +8,64 @@
     <style>
         body {
             background-color: lightgreen;
-            
+            margin: 0px;
         }
+
         #portaMascota {
-            width: 900px;
-            height: 400px;
-            background-color: lightpink;
-            display: block;
-            align-items: center;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 7% auto;
+            width: 80vw;
+            height: 80vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         #fotoMascota {
             width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
-        .centrado {
-            margin:10px auto;
-		    display:block;
+        @media screen and (orientation:landscape) {
+            #portaMascota {
+                max-width: 1920px;
+                max-height: 1200px;
+            }
         }
 
         @media screen and (orientation:portrait) {
-            #portaPaisaje {
-                width: 600px;
-                height: 900px;
-                background-color: cyan;
+            #portaMascota {
+                max-width: 1200px;
+                max-height: 1500px;
             }
         }
-
-        @media screen and (orientation:landscape) {
-            #portaPaisaje {
-                width: 1200px;
-                height: 800px;
-                background-color: cyan;
-            }
-        }    
     </style>
 </head>
 <body>
+    
     <picture id="portaMascota">
+        <!--Imagen horizontal grande -->
+        <source media="(orientation: landscape) and (min-width: 801px)" srcset="./horizontal1jpg.heic" type="image/heic">
+        <source media="(orientation: landscape) and (min-width: 801px)" srcset="./horizontal1jpg.webp" type="image/webp">
+        <source media="(orientation: landscape) and (min-width: 801px)" srcset="./horizontal1jpg.jpg" type="image/jpg">
+        <!--Imagen horizontal pequeña -->
+        <source media="(orientation: landscape) and (max-width: 800px)" srcset="./horizontal2.heic" type="image/heic">
+        <source media="(orientation: landscape) and (max-width: 800px)" srcset="./horizontal2.webp" type="image/webp">
+        <source media="(orientation: landscape) and (max-width: 800px)" srcset="./horizontal2.jpg" type="image/jpg">
+        <!--Imagen vertical grande -->
+        <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical1.heic" type="image/heic">
+        <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical1.webp" type="image/webp">
+        <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical1.jpg" type="image/jpg">
+        <!--Imagen vertical pequeña -->
+        <source media="(orientation: portrait) and (max-width:600px)" srcset="./vertical2.heic" type="image/heic">
+        <source media="(orientation: portrait) and (max-width:600px)" srcset="./vertical2.webp" type="image/webp">
+        <source media="(orientation: portrait) and (max-width:600px)" srcset="./vertical2.jpg" type="image/jpg">
 
-        <source media="(orientation: landscape) and (min-width: 1921px)" srcset="./horizontal1jpg.heic" type="image/heic">
-        <source media="(orientation: landscape) and (min-width: 1921px)" srcset="./horizontal1jpg.webp" type="image/webp">
-        <source media="(orientation: landscape) and (min-width: 1921px)" srcset="./horizontal1jpg.jpg" type="image/jpg">
-        <source media="(orientation: landscape) and (min-width: 801px)" srcset="./horizontal2.heic" type="image/heic">
-        <source media="(orientation: landscape) and (min-width: 801px)" srcset="./horizontal2.webp" type="image/webp">
-        <source media="(orientation: landscape) and (min-width: 801px)" srcset="./horizontal2.jpg" type="image/jpg">
-        <source media="(orientation: portrait) and (min-width:1201px)" srcset="./vertical1.heic" type="image/heic">
-        <source media="(orientation: portrait) and (min-width:1201px)" srcset="./vertical1.webp" type="image/webp">
-        <source media="(orientation: portrait) and (min-width:1201px)" srcset="./vertical1.jpg" type="image/jpg">
-        <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical2.heic" type="image/heic">
-        <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical2.webp" type="image/webp">
-        <source media="(orientation: portrait) and (min-width:601px)" srcset="./vertical2.jpg" type="image/jpg">
-
-        <img 
-            class="centrado"
+        <img
             id="fotoMascota" 
             alt="Foto de un conejito" 
             title="Bolitas de algodón con patas ♡"           
             src="vertical2.jpg"/>
+    </picture>
 </body>
 </html>
